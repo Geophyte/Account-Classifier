@@ -3,7 +3,7 @@ import json
 
 
 def load_jsonl(file_path):
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         data = file.readlines()
 
     records = [json.loads(line.strip()) for line in data]
@@ -14,7 +14,7 @@ def load_jsonl(file_path):
 
 
 def load_jsonl_tuples(file_path):
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         data = file.readlines()
 
     records = []
