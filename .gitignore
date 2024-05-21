@@ -1,13 +1,4 @@
 .vscode/settings.json
-1/1/c/obj
-1/1/c/build
-2/1/C/obj
-2/1/C/build
-2/2/C/obj
-2/2/C/build
-2/3b/C/obj
-2/3b/C/build
-static/
 
 __pycache__/
 *.py[cod]
@@ -162,4 +153,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-data
+data/v1
+data/v2
+data/v3
