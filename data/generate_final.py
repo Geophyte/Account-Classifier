@@ -26,19 +26,38 @@ def main():
             'favourite_genres': group['favourite_genres'].iloc[0],
             'premium_user': group['premium_user'].iloc[0],
             'popularity_mean': group['popularity'].mean(),
+            'popularity_std': group['popularity'].std(),
+            'popularity_min': group['popularity'].min(),
+            'popularity_max': group['popularity'].max(),
             'duration_ms_mean': group['duration_ms'].mean(),
+            'duration_ms_std': group['duration_ms'].std(),
+            'duration_ms_min': group['duration_ms'].min(),
+            'duration_ms_max': group['duration_ms'].max(),
             'explicit_ratio': group['explicit'].mean(),
+            'explicit_count': group['explicit'].sum(),
             'danceability_mean': group['danceability'].mean(),
+            'danceability_std': group['danceability'].std(),
             'energy_mean': group['energy'].mean(),
+            'energy_std': group['energy'].std(),
             'loudness_mean': group['loudness'].mean(),
+            'loudness_std': group['loudness'].std(),
             'speechiness_mean': group['speechiness'].mean(),
+            'speechiness_std': group['speechiness'].std(),
             'acousticness_mean': group['acousticness'].mean(),
+            'acousticness_std': group['acousticness'].std(),
             'instrumentalness_mean': group['instrumentalness'].mean(),
+            'instrumentalness_std': group['instrumentalness'].std(),
             'liveness_mean': group['liveness'].mean(),
+            'liveness_std': group['liveness'].std(),
             'valence_mean': group['valence'].mean(),
+            'valence_std': group['valence'].std(),
             'tempo_mean': group['tempo'].mean(),
+            'tempo_std': group['tempo'].std(),
             'key_median': group['key'].median(),
+            'release_year_mode': group['release_year'].mode().iloc[0],
             'release_year_median': group['release_year'].median(),
+            'release_year_min': group['release_year'].min(),
+            'release_year_max': group['release_year'].max(),
             'unique_artist_count': group['artist_id'].nunique(),
             'unique_track_count': group['track_id'].nunique(),
             'city_frequency': group['city'].count() / unique_users,
@@ -46,7 +65,7 @@ def main():
             'like_play_ratio': like_count / play_count
         })
 
-    initial_df = initial_df.groupby('user_id').apply(calculate_metrics, include_groups=True)
+    initial_df = initial_df.groupby('user_id').apply(calculate_metrics)
     initial_df.reset_index(inplace=True)
 
     initial_df.to_csv(result_path, index=False)
