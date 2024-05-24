@@ -23,10 +23,11 @@ def predictFromFile():
 
     predictions = []
     
-    model = joblib.load("models/model.pkl")
+    model = joblib.load("models/rf_selected_model.joblib")
 
-    for record in data:
+    for record in data[1:]:
         # Split the record by comma and convert each item to float
+        print(record)
         record = list(float(x) for x in record.strip("'").replace(" ", "").split(","))
         print(record)
         predictions.append(model.predict(record))
