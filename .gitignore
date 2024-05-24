@@ -156,4 +156,7 @@ cython_debug/
 data/v1
 data/v2
 data/v3
-data/final
+data/final/initial.csv
+
+
+models/trained/rf_model.joblib
