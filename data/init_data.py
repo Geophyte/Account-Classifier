@@ -25,9 +25,9 @@ def main():
     users_df = load_jsonl(users_path)
 
     tracks_df['release_year'] = pd.to_datetime(tracks_df['release_date'], format='mixed').dt.year
+    tracks_df['mode'] = tracks_df['mode'].fillna(-1)
 
-    sessions_df.drop(columns=['timestamp'], inplace=True)
-    tracks_df.drop(columns=['name', 'time_signature', 'mode'], inplace=True)
+    tracks_df.drop(columns=['name'], inplace=True)
     users_df.drop(columns=['name', 'street'], inplace=True)
 
     merged_df = pd.merge(sessions_df, users_df, on='user_id', how='inner')
