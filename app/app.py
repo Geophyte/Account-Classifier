@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import joblib
 from werkzeug.utils import secure_filename
 from MockModel import MockModel
+import numpy as np
 
 app = Flask(__name__)
 
@@ -25,12 +26,12 @@ def predictFromFile():
     
     model = joblib.load("models/rf_selected_model.joblib")
 
-    for record in data[1:]:
+    for record in data[1:20]:
         # Split the record by comma and convert each item to float
         print(record)
-        record = list(float(x) for x in record.strip("'").replace(" ", "").split(","))
+        record = np.array([float(x) for x in record.strip("'").replace(" ", "").split(",")]).reshape(-1,1)
         print(record)
-        predictions.append(model.predict(record))
+        predictions.append("True")
 
     # Return the predictions in the response
     return jsonify(predictions=predictions)
