@@ -11,7 +11,7 @@ with open(args.filename, 'rb') as f:
     files = {'file': f}
 
     # Send the POST request
-    response = requests.post("http://localhost:8080/predictionB", files=files)
+    response = requests.post("http://localhost:8080/prediction", files=files)
 
 #can also just:
 #curl -X POST -F "file=@file.txt" http://localhost:8080/predictionB

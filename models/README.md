@@ -16,4 +16,4 @@ odpalane z folderu projektu przy uzyciu:
 
 klasyfikatory można również odpalić bezpośrednio poleceniem:
 
-    **curl -X POST -H "Content-Type:application/json" -d '{"key1":1, "key2":2}' http://localhost:8080/predictionB*
+curl -X POST -F "file=@data/final/selected.csv" http://localhost:8080/prediction
