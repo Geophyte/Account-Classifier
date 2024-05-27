@@ -15,10 +15,12 @@ final_df = pd.read_csv(final_path)
 
 filtered_df = final_df[list(selected_columns.intersection(final_df.columns))]
 
+columns_to_normalize = [col for col in filtered_df.columns if col != 'user_id']
 scaler = StandardScaler()
-normalized_data = scaler.fit_transform(filtered_df)
+normalized_data = scaler.fit_transform(filtered_df[columns_to_normalize])
 
-normalized_df = pd.DataFrame(normalized_data, columns=filtered_df.columns)
+normalized_df = pd.DataFrame(normalized_data, columns=columns_to_normalize)
+normalized_df['user_id'] = filtered_df['user_id']
 
 normalized_df.to_csv(result_path, index=False)
 
