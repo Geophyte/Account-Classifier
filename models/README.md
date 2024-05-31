@@ -9,7 +9,9 @@
 - **svm.ipynb** - Trenuje model SVM na wyselekcjonowanych danych i zapisuje go do `<root>/models/trained/svm_selected_model.joblib`. **Uwaga:** Zawiera sekcję strojenia parametrów, która może zająć trochę czasu.
 
 
-w folderze client app znajduję się skrypt pythona pozwalający na łatwierze wysłanie polecenia CURl
+# Uruchamianie 
+
+w folderze client app znajduję się skrypt pythona pozwalający na łatwiejsze wysłanie polecenia CURl
 odpalane z folderu projektu przy uzyciu:
 
    *python3 ./clientapp/clientapp.py --filename ./data/final/selected.csv*

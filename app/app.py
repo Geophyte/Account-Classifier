@@ -26,10 +26,9 @@ def predictFromFile():
     
     data = file.read().decode('utf-8').splitlines()
 
-    predictions = []
     
-    modelA = joblib.load("models/rf_selected_model.joblib")
-    modelB = joblib.load("models/xgb_selected_model.joblib")
+    modelA = joblib.load("../models/trained/rf_selected_model.joblib")
+    modelB = joblib.load("../models/trained/xgb_selected_model.joblib")
     
 
     feature_names = data[0].strip("'").replace(" ", "").split(",")
@@ -63,26 +62,36 @@ def predictFromFile():
     loggerB.setLevel(logging.INFO)
 
 
-    models = [modelA, modelB]
-    loggers = [loggerA, loggerB]
+    models = [modelA, modelB] #more models can be added here
+    loggers = [loggerA, loggerB] #more loggers should be added here one for each model
 
-    for record in data[1:20]:
+    predictions = []
+
+
+    # for record in data[1:20]:
+    for record in data[1:]:
         # Split the record by comma and convert each item to float
         record = np.array([float(x) for x in record.strip("'").replace(" ", "").split(",")]).reshape(1,-1)
-        record_df = pd.DataFrame(record, columns=feature_names)
+        record_df = pd.DataFrame(record, columns=feature_names).drop(columns=['user_id'])
+        #extract user id and convert to int
+        user_id = int(pd.DataFrame(record, columns=feature_names).user_id[0])
 
         # Randomly select a model
-        index = random.choice([0, 1])
-        model = models[index]
-        logger = loggers[index]
+        modelIndex = random.choice([0, len(models)-1])
+        model = models[modelIndex]
+        logger = loggers[modelIndex]
 
         prediction = model.predict(record_df)
+        prediction = bool(prediction)
+        
+        logLine = f"{user_id}, {prediction}"
 
         # Append the prediction to the predictions list
-        predictions.append(bool(prediction[0]))
+        predictions.append(prediction)
 
         # Log the prediction
-        logger.info(str(bool(prediction[0])))
+        logger.info(logLine)
+
     # Return the predictions in the response
     return jsonify(predictions=predictions)
 
