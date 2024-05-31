@@ -27,14 +27,14 @@ def predictFromFile():
     data = file.read().decode('utf-8').splitlines()
 
     
-    modelA = joblib.load("../models/trained/rf_selected_model.joblib")
-    modelB = joblib.load("../models/trained/xgb_selected_model.joblib")
+    modelRF = joblib.load("../models/trained/rf_selected_model.joblib")
+    modelXGB = joblib.load("../models/trained/xgb_selected_model.joblib")
     
 
     feature_names = data[0].strip("'").replace(" ", "").split(",")
 
-    log_file_A = 'logs/modelA.log'
-    log_file_B = 'logs/modelB.log'
+    log_file_A = 'logs/modelRF.log'
+    log_file_B = 'logs/modelXGB.log'
 
     # Create log files if they don't exist
     if not os.path.exists(log_file_A):
@@ -49,21 +49,21 @@ def predictFromFile():
     formatter = logging.Formatter('%(message)s')
     
     # Set up logging
-    loggerA = logging.getLogger('ModelA')
-    handlerA = logging.FileHandler('logs/modelA.log')
-    handlerA.setFormatter(formatter)
-    loggerA.addHandler(handlerA)
-    loggerA.setLevel(logging.INFO)
+    loggerRF = logging.getLogger('modelRF')
+    handlerRF = logging.FileHandler('logs/modelRF.log')
+    handlerRF.setFormatter(formatter)
+    loggerRF.addHandler(handlerRF)
+    loggerRF.setLevel(logging.INFO)
 
-    loggerB = logging.getLogger('ModelB')
-    handlerB = logging.FileHandler('logs/modelB.log')
-    handlerB.setFormatter(formatter)
-    loggerB.addHandler(handlerB)
-    loggerB.setLevel(logging.INFO)
+    loggerXGB = logging.getLogger('modelXGB')
+    handlerXGB = logging.FileHandler('logs/modelXGB.log')
+    handlerXGB.setFormatter(formatter)
+    loggerXGB.addHandler(handlerXGB)
+    loggerXGB.setLevel(logging.INFO)
 
 
-    models = [modelA, modelB] #more models can be added here
-    loggers = [loggerA, loggerB] #more loggers should be added here one for each model
+    models = [modelRF, modelXGB] #more models can be added here
+    loggers = [loggerRF, loggerXGB] #more loggers should be added here one for each model
 
     predictions = []
 
