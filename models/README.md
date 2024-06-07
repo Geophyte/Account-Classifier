@@ -8,13 +8,15 @@
 
 - **svm.ipynb** - Trenuje model SVM na wyselekcjonowanych danych i zapisuje go do `<root>/models/trained/svm_selected_model.joblib`. **Uwaga:** Zawiera sekcję strojenia parametrów, która może zająć trochę czasu.
 
+- **comparison.ipynb** - Porównanie wcześniej wytrenowanych modeli z `<root>/models/trained`.
+
 
 # Uruchamianie 
 
 
 w pliku selected.csv znajdują się przykładowe dane utworzone z dostarczonych danych użytkowników. Należy zastąpić do nowymi danymi dla których chcemy uzyskać predykcję posiadania statusu premium
 
-Aby uzyskać predykcję należy uruchomić microserwi:
+Aby uzyskać predykcję należy uruchomić microserwis:
 
 W celu uruchomienia microserwisu należy w folderze app uruchomić program app.py poprzez wywołanie polecenia *python3 app.py*
 
