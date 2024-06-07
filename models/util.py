@@ -31,19 +31,19 @@ def set_seed(seed=42):
 
 def show_metrics(y_test, y_pred, y_pred_proba):
     accuracy = metrics.accuracy_score(y_test, y_pred)
-    print(f'Accuracy: {accuracy:.2f}')
+    print(f'Accuracy: {accuracy:.4f}')
 
     roc_auc = metrics.roc_auc_score(y_test, y_pred_proba)
-    print(f'ROC AUC: {roc_auc:.2f}')
+    print(f'ROC AUC: {roc_auc:.4f}')
 
     precision = metrics.precision_score(y_test, y_pred)
-    print(f'Precision: {precision:.2f}')
+    print(f'Precision: {precision:.4f}')
 
     recall = metrics.recall_score(y_test, y_pred)
-    print(f'Recall: {recall:.2f}')
+    print(f'Recall: {recall:.4f}')
 
     f1 = metrics.f1_score(y_test, y_pred)
-    print(f'F1 Score: {f1:.2f}')
+    print(f'F1 Score: {f1:.4f}')
 
     cm = metrics.confusion_matrix(y_test, y_pred)
     disp = metrics.ConfusionMatrixDisplay(confusion_matrix=cm)
