@@ -1,7 +1,5 @@
 from flask import Flask, request, jsonify
 import joblib
-from werkzeug.utils import secure_filename
-from MockModel import MockModel
 import numpy as np
 import pandas as pd
 import random
