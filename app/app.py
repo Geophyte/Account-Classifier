@@ -96,4 +96,5 @@ def predictFromFile():
     return jsonify(predictions=predictions)
 
 if __name__ == '__main__':
+    random.seed(0)
     app.run(port=8080, debug=True)
