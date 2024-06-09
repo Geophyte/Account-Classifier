@@ -24,5 +24,7 @@ Badania *"laboratoryjne"* (mimo bardzo dużej ilości danych historycznych) czę
 
 Pozwoli to aby w perspektywie czasu podjąć decyzję który z modeli zostanie wykorzystany w celu trwałej implementacji w systemie zleceniodawcy, na podstawie skuteczności wybranej strategii marketingowej oraz jej korelacji z każdym z modeli. 
 
+Proces przeprowadzenia testu oraz uruchomienia microserwisu został zawarty w pliku [Uruchamianie.md](Uruchamianie.md)
+
 ## Podsumowanie
 Dzieki dużej ilości dostępnych danych historycznych udało się przygotować dwa modele znacznie przekraczające kryterium sukcesu założone na początku projektu. Wierzymy, że wykorzystanie ślepego testu AB pozwoli zleceniodawcy na świadome wybranie jak najlepszego rozwiązania który w następstwie w czasie rzeczywistym będzie pomagał przyjąć optymalną strategię marketingową i w efekcie zwiększenie zysków i zadowolenia użytkowników których doświadczenia będą lepiej dopasowane do ich oczekiwań. 
