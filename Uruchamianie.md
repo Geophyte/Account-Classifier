@@ -1,6 +1,12 @@
 # Uruchamianie 
 
+### Dane
+
 w pliku selected.csv znajdują się przykładowe dane utworzone z dostarczonych danych użytkowników. Jest ich bardzo dużo dlatego proces predykcji zajmuje stosunkowo dużo czasu. Należy zastąpić go nowymi danymi dla których chcemy uzyskać predykcję posiadania statusu premium.
+
+Dane możemy wygenrować za pomocą zawartych w folderze /dane skryptów opsianych w tamtejszym README.md
+
+### Mikroserwis
 
 Aby uzyskać predykcję należy uruchomić microserwis:
 

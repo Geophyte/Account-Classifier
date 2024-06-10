@@ -10,7 +10,7 @@ Podstawowym celem projektu było wykonanie systemu oceny i analizy użytkownikó
 Oczekiwana była dokładność przekraczająca 75% skuteczności w stawianych przewidywaniach.
 
 ## Dane wejściowe
- W celu wykonania zlecenia, ostatecznie, otrzymaliśmy między innymi dane 30 tysięcy użytkowników oraz prawie 15 milionów zapisów interakcji tych użytkowników z serwisem. 
+W celu wykonania zlecenia, ostatecznie, otrzymaliśmy między innymi dane 30 tysięcy użytkowników oraz prawie 15 milionów zapisów interakcji tych użytkowników z serwisem. 
 
 ## Wykonanie projektu
 W ramach wykonania projektu przygotowane zostały różne modele uczenia maszynowego z różnymi efektami końcowymi. Ostatecznie wykorzystane zostały dwa o najlepszej dokładności pracując na odpowiednio wybranych kategoriach danych. 
